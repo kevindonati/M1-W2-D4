@@ -269,24 +269,11 @@ La funzione è composta da un ciclo che stampa un numero casuale tra 0 e 9 finch
 */
 console.log("ESERCIZIO EXTRA 6")
 
-numRandom = Math.floor(Math.random() * 10)
-let x = 5
-let i = 0
-
-const loopUntil = function () {
+const loopUntil = function (x) {
+  let i = 0
   while (i < 3) {
-    numRandom = Math.floor(Math.random() * 10)
+    let numRandom = Math.floor(Math.random() * 10)
     console.log(numRandom)
-    if (x > numRandom) {
-      i++
-    } else {
-      i = 0
-    }
-    if (x > numRandom) {
-      i++
-    } else {
-      i = 0
-    }
     if (x > numRandom) {
       i++
     } else {
@@ -295,32 +282,89 @@ const loopUntil = function () {
   }
 }
 
-loopUntil()
+loopUntil(8)
 
 /* EXTRA 7
 Crea una funzione chiamata "average" che riceve un array come parametro e ne ritorna la media aritmetica. La funzione salta automaticamente i valori non numerici nell'array.
 */
+console.log("ESERCIZIO EXTRA 7")
 
-/* SCRIVI QUI LA TUA RISPOSTA */
+const array2 = [3, 4, 6, "ciao", "3", 10]
+
+let arrayOnlyNumber = []
+
+let sommaArray = 0
+
+const average = function () {
+  for (let i = 0; i < array2.length; i++) {
+    if (typeof array2[i] === "number") {
+      arrayOnlyNumber.push(array2[i])
+      sommaArray += array2[i]
+    }
+  }
+  console.log("media aritmetica:", sommaArray / arrayOnlyNumber.length)
+}
+
+average()
 
 /* EXTRA 8
- Crea una funzione chiamata "longest" che trova la stringa più lunga all'interno di un array di stringhe fornito come parametro.
+Crea una funzione chiamata "longest" che trova la stringa più lunga all'interno di un array di stringhe fornito come parametro.
 */
+console.log("ESERCIZIO EXTRA 8")
 
-/* SCRIVI QUI LA TUA RISPOSTA */
+const arrayStringhe = [
+  "tra poco arrivo",
+  "ciao ",
+  "ciao come va",
+  "ciaociaociaociaociao",
+]
+
+let caratteriLongestString = 0
+
+let longestString = []
+
+const longest = function () {
+  for (let i = 0; i < arrayStringhe.length; i++) {
+    if (arrayStringhe[i].length > caratteriLongestString) {
+      caratteriLongestString = arrayStringhe[i].length
+      longestString.pop()
+      longestString.unshift(arrayStringhe[i])
+    }
+  }
+  console.log(longestString)
+}
+
+longest()
 
 /* EXTRA 9
- Crea una funzione per creare un filtro anti-spam per la tua casella email. La funzione riceve un parametro stringa chiamato "emailContent", e torna un valore booleano.
- La funzione deve ritornare true se "emailContent" non contiene le parole "SPAM" o "SCAM".
+Crea una funzione per creare un filtro anti-spam per la tua casella email. La funzione riceve un parametro stringa chiamato "emailContent", e torna un valore booleano.
+La funzione deve ritornare true se "emailContent" non contiene le parole "SPAM" o "SCAM".
 */
+console.log("ESERCIZIO EXTRA 9")
 
-/* SCRIVI QUI LA TUA RISPOSTA */
+const emailAntiSpam = function (emailContent) {
+  if (emailContent.includes("SCAM") || emailContent.includes("SPAM")) {
+    return false
+  } else {
+    return true
+  }
+}
+
+console.log(emailAntiSpam("Ciao, questa è una mail SCAM"))
 
 /* EXTRA 10
- Scrivi una funzione che riceve una data come parametro, e calcola il numero di giorni passati da quella data.
+Scrivi una funzione che riceve una data come parametro, e calcola il numero di giorni passati da quella data.
 */
+console.log("ESERCIZIO EXTRA 10")
 
-/* SCRIVI QUI LA TUA RISPOSTA */
+const date = Date()
+const today = date.getDate()
+
+// const differenzaGiorni = (data) {()
+
+// }
+
+console.log(today)
 
 /* EXTRA 11
  Scrivi una funzione chiamata "matrixGenerator" che riceve come parametri due numeri interi, "x" e "y".
